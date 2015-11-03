@@ -17,5 +17,7 @@ DataMapper.finalize.auto_upgrade!
 
 
 get '/' do
-  'Hello World'
+  @notes = Note.all :order => :id.desc
+  @title = 'All Notes'
+  erb :home
 end
